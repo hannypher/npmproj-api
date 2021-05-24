@@ -9,7 +9,7 @@ app.use('/', (req, res, next) => {
 });
 
 //start the server
-app.listen(6000, () => console.log('server is running at port: 6000'))
+//app.listen(6000, () => console.log('server is running at port: 6000'))
 //const {password} = require('./login');
 
 //console.log(password);

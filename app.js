@@ -11,5 +11,5 @@ app.use('/reviews/', reviewRoutes);
 
 
 //run the server
-let port = 3000
-app.listen(3000, () => console.log('Server running at ', port));
+let port = 6000
+app.listen(6000, () => console.log('Server running at ', port));
