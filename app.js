@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const reviewRoutes = require('./routes/reviews.routes');
@@ -11,5 +12,5 @@ app.use('/reviews/', reviewRoutes);
 
 
 //run the server
-let port = 6000
-app.listen(6000, () => console.log('Server running at ', port));
+const {PORT, START_UP_MESSAGE} = process.env
+app.listen(PORT, () => console.log(`${START_UP_MESSAGE} ${PORT}`));
