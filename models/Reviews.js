@@ -1,9 +1,11 @@
 let reviews = []; //temporary database/ store
 
 class Review {
-    constructor() {}; //only add params if you intend to initialize with data
+    constructor() {
+        this.name = 'name'
+    }; //only add params if you intend to initialize with data
     static fetchReviews (){
-        return reviews.length ? reviews: "No reviews have been added";
+        return reviews.length ? reviews: 'No reviews have been added';
     };
     static addReview (review) {
         return reviews.push(review);
@@ -25,18 +27,18 @@ class Review {
         //find the item
         let review;
         if (reviews.length) {
-            review = reviews.find(review => review.pk == id);
+            
         } else {
             return {message: "No reviews to update"}
         }
         //make changes
-        if(Object.keys(review).length) {
+        if(review) {
             let updatedReview = {...review, message: data}
             let position = reviews.findIndex(review =>review.pk == id);
             reviews[position] = updatedReview;
-            return reviews[position]
+            return {review : reviews[position]}
         } else {
-            return {message: 'Reviews not found'}
+            return {message: 'Review not found'}
         }
         //save the change
     }

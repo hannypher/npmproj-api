@@ -13,4 +13,4 @@ app.use('/reviews/', reviewRoutes);
 
 //run the server
 const {PORT, START_UP_MESSAGE} = process.env
-app.listen(PORT, () => console.log(`${START_UP_MESSAGE} ${PORT}`));
+app.listen(PORT, ()=> console.log(`${START_UP_MESSAGE} ${PORT}`));
