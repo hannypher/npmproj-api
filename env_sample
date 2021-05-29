@@ -1,0 +1,4 @@
+PORT=4000
+START_UP_MESSAGE="Server is running at :"
+DATABASE_URL='mongodb+srv://hannypher:hanifah143ismah@cluster0.0qumt.mongodb.net/reviewdb?retryWrites=true&w=majority'
+LOCAL_DATABASE_URL='mongodb://localhost:27017/reviewdb'

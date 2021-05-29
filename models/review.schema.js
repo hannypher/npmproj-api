@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 //structure of our data to be stored
 const ReviewSchema = new mongoose.Schema({
-    full_name: String,
+    fullName: String,
     message: String
 });
 
