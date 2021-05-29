@@ -1,8 +1,18 @@
 //import the model
 const {Review, reviews} = require('../models/Reviews');
+const ReviewModel = require('../models/review.model')
 
 const fetchAllReviews = () => {
-    return Review.fetchReviews();
+   // const rev = new ReviewModel()
+    // return Review.fetchReviews();
+   // return ReviewModel.find();
+   return ReviewModel.find().then(data => {
+       return {data}
+
+    }).catch(err => {
+       throw new Error(err)}
+       ); 
+
 }
 
 const createReview = (review) => {
