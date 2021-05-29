@@ -8,28 +8,29 @@ router.get('/', async (req, res) => {
     return res.json({reviews})
 });
 
-router.post('/add', (req, res) => {
+router.post('/add', async (req, res) => {
     let {fullName, message} = req.body;
-    reviewControllers.createReview({fullName, message })
-    return res.json({message: 'Review was added successfully'})
+    let created = await reviewControllers.createReview({fullName, message })
+    return res.json({created})
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
     const {id} = req.params;
-    let data = reviewControllers.fetchReview(id);
+    const {fullName} = req.query;
+    let data = await reviewControllers.fetchReview(id);
     return res.json({ data }); 
 });
 
-router.put('/:id/update', (req, res) => {
+router.put('/:id/update', async (req, res) => {
     const {id} = req.params;
     const {message} = req.body;
-    let updated = reviewControllers.updateReview(id, message)
+    let updated = await reviewControllers.updateReview(id, message)
     return res.json({data: updated})
 });
 
-router.delete('/:id/delete', (req, res) => {
+router.delete('/:id/delete', async (req, res) => {
     const {id} = req.params;
-    response = reviewControllers.deleteReview(id)
+    response = await reviewControllers.deleteReview(id)
     return res.json({data: response})
 });
 
